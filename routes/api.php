@@ -54,11 +54,11 @@ Route::get('/getcategories', [CategoryController::class, 'showcategory']);
 Route::get('/products/{id}/viewproduct', [ProductController::class, 'eachproduct']);
 
 Route::get('/categories/{categorySearchTerm}', [CategoryController::class, 'searchcategory']);
-Route::get('/search/{searchTerm?}/{categorySearchTerm?}', [SearchController::class, 'searchProducts']);
+Route::get('/search/', [SearchController::class, 'searchProducts']);
 
 
 
-Route::group(['middleware' => ['auth:sanctum']], function() {
+Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/favourite', [FavoriteController::class, 'addToFavourite']);
     Route::get('/getfavourite', [FavoriteController::class, 'getfavourite']);
     // Route::get('/getuserfavourite', [FavoriteController::class, 'getuserfavourite']);
@@ -76,8 +76,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/userinfo', [UserController::class, 'userinfo']);
     Route::post('/userinfoupdate', [UserController::class, 'userinfoUpdate']);
 
-    
-    
+
+
     // Route::get('/products/{id}/viewproduct', [ProductController::class, 'eachproduct']);
 });
 
@@ -108,6 +108,3 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
 
 
 // Admin Controller
-
-
-

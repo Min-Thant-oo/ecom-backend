@@ -31,10 +31,12 @@ class Product extends Model
     {
         $query->with('category');
 
-        $query->where(function ($innerQuery) use ($searchTerm) {
-            $innerQuery->where('title', 'LIKE', '%' . $searchTerm . '%')
-                ->orWhere('description', 'LIKE', '%' . $searchTerm . '%');
-        });
+        if ($searchTerm) {
+            $query->where(function ($innerQuery) use ($searchTerm) {
+                $innerQuery->where('title', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('description', 'LIKE', '%' . $searchTerm . '%');
+            });
+        }
 
         if ($categorySearchTerm) {
             $query->whereHas('category', function ($innerQuery) use ($categorySearchTerm) {
