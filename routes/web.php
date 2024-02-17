@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function ($request) {
-    return "OK";
-});
+// Route::get('/test', function ($request) {
+//     return "OK";
+// });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
