@@ -37,7 +37,7 @@
 
         <ul style="list-style-type: none; padding: 0;">
             <li><strong>Name:</strong> {{ $contactus->name }}</li>
-            <li><strong>Email:</strong> {{ $contactus->email }}</li>
+            <li><strong>Email:</strong> <a href="mailto:{{$contactus->email}}">{{ $contactus->email }}</a></li>
             <li><strong>Subject:</strong> {{ $contactus->subject }}</li>
         </ul>
 
