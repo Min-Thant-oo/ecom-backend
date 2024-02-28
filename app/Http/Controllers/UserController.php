@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\Favorite;
 
 use App\Jobs\SendForgetPasswordEmail;
 use App\Models\User;
-use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Jobs\SendWelcomeEmail;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Laravel\Sanctum\PersonalAccessToken;
-use Illuminate\Console\View\Components\Alert;
-use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
@@ -78,91 +73,6 @@ class UserController extends Controller
         $user = $request->user();
         return response()->json(['user' => $user]);
     }
-
-
-    // public function userinfoUpdate(Request $request) {
-    //     // Ensure the user is authenticated
-    //     if (!$request->user()) {
-    //         return response()->json(['message' => 'Unauthenticated'], 401);
-    //     }
-
-    //     $formData = $request->validate([
-    //         'name'    => 'required',
-    //         'email'   => 'required|unique:users,email,' . $request->user()->id,
-    //         'user_id' => 'required|exists:users,id',
-    //     ]);
-
-    //     // Check if 'oldpassword' is present in the request (indicating a password change)
-    //     // if ($request->has('oldpassword')) {
-    //     //     $request->validate([
-    //     //         'oldpassword' => 'required|password', // Add validation rules for old password
-    //     //         'password'    => 'required|min:6',    // Add validation rules for new password
-    //     //     ]);
-
-    //     //     // Update password
-    //     //     $formData['password'] = bcrypt($request->input('password'));
-    //     // }
-
-    //     $user = $request->user()->update($formData);
-
-    //     if (!$user) {
-    //         return response()->json(['message' => 'unsuccessful']);
-    //     }
-
-    //     return response()->json(['message' => 'successfully updated']);
-    // }
-
-
-    // public function userinfoUpdate(Request $request) {
-    //     // Ensure the user is authenticated
-    //     $user = $request->user();
-    //     if (!$user) {
-    //         return response()->json(['message' => 'Unauthenticated'], 401);
-    //     }
-
-    //     $formData = $request->validate([
-    //         'name'    => 'required',
-    //         'email'   => 'required|unique:users,email,' . $user->id,
-    //         'user_id' => 'required|exists:users,id',
-    //         'image'    => 'nullable',
-    //         'oldpassword' => 'nullable|required_with:password',
-    //         'password'    => 'nullable|min:6',
-    //     ]);
-
-
-
-    //     // Check if 'oldpassword' is provided
-    //     if (isset($formData['oldpassword'])) {
-    //         // Verify the old password
-    //         if (!Hash::check($formData['oldpassword'], $user->password)) {
-    //             return response()->json(['error' => 'Old password is incorrect'], 422);
-    //         }
-
-    //         // Update the password if old password is correct
-    //         $formData['password'] = bcrypt($formData['password']);
-    //     }
-
-    //     $user->update([
-    //         'name' => $formData['name'],
-    //         'email' => $formData['email'],
-    //     ]);
-
-
-    //     // Check if an image file is present
-    //     if ($request->hasFile('image')) {
-    //         // Store the image and get the path
-    //         $formData['image'] = $request->file('image')->store('images');
-
-    //         $user->update([
-    //             'image' => $formData['image']
-    //         ]);
-    //     }
-
-
-    //     return response()->json(['message' => 'successfully updated']);
-    // }
-
-
 
     public function userinfoUpdate(Request $request)
     {

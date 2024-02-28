@@ -50,10 +50,5 @@ class  SendOrderConfirmationEmail implements ShouldQueue
                 ->attachData($pdf->output(), $fileName);
         });
 
-
-        // Telegram::sendMessage([
-        //     'chat_id' => env('TELEGRAM_CHAT_ID'),
-        //     'text' => "New purchase made!\n\nOrder Details:\n" . json_encode($this->order),
-        // ]);
     }
 }

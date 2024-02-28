@@ -80,13 +80,17 @@
         <p>To reset your password, click on the following button:</p>
 
         <div class="button-center">
-            <a href="{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword"}}" style="text-decoration: none;">Reset Password</a>
+            {{-- <a href="{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword"}}" style="text-decoration: none;">Reset Password</a> --}}
+            <a href="{{ env('APP_URL') . "/{$user->remember_token}/{$user->email}/resetpassword" }}" style="text-decoration: none;">Reset Password</a>
         </div>
 
         <p>If you're having trouble clicking the "Reset Password" button, copy and paste the following URL into your web browser:</p>
 
         {{-- <p>{{ url('/reset', $user->remember_token) }}</p> --}}
-        <p><a href="{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword" }}" class="link">{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword" }}</a></p>
+        <p>
+            {{-- <a href="{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword" }}" class="link">{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword" }}</a> --}}
+            <a href="{{ env('APP_URL') . "/{$user->remember_token}/{$user->email}/resetpassword" }}" class="link">{{ env('APP_URL') . "/{$user->remember_token}/{$user->email}/resetpassword" }}</a>
+        </p>
 
 
         <p>This link will expire in {{ config('auth.passwords.users.expire') }} minutes.</p>

@@ -59,37 +59,11 @@ class OrderConfirmationEmail extends Mailable
      */
     public function attachments()
     {
-        // return [];
-        // $receipt = ['receipt' => $this->order];
-        // $pdf = Pdf::loadView('admin.pdf.download_pdf', $receipt);
-        // $todayDate = Carbon::now()->format('d-m-Y');
-        // // return $pdf->output();
-
-        // // Attach the PDF to the email
-        // $filename = 'receipt-' . $this->order->transaction_id . '-' . now()->format('d-m-Y') . '.pdf';
-        // return [
-        //     [
-        //         'data' => $pdf,
-        //         'name' => $filename,
-        //         'options' => ['mime' => 'application/pdf'],
-        //         'attachment' => $this->attachData($pdf, $filename, ['mime' => 'application/pdf']),
-        //     ],
-        // ];
-
-        // return [
-        //     Attachment::fromPath($this->order['attachment'])
-        //         ->as('receipt-' . $this->order->transaction_id . '-' . now()->format('d-m-Y') . '.pdf')
-        //         ->withMime('application/pdf')
-        // ];
-
         $data = [
             'order' => $this->order,
-            // Add any additional dynamic data you need
         ];
 
         $pdf = PDF::loadView('admin.mail.order_confirmation', $data);
-
-        // $fileName = 'receipt-' . $this->order->transaction_id . '-' . now()->format('d-m-Y') . '.pdf';
 
         return [
             'invoice.pdf' => $pdf->output(),

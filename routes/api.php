@@ -31,14 +31,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::middleware('auth:sanctum')->get('sanctum/csrf-cookie', function (Request $request) {
-//     return response()->json(['message' => 'CSRF cookie set']);
-// });
-
-// Route::get('/sanctum/csrf-cookie', [CsrfCookieController::class, 'show']);
-
-
-
 Route::post('/registration', [UserController::class, 'registration']);
 Route::post('/signin', [UserController::class, 'signin']);
 
@@ -75,36 +67,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('/userinfo', [UserController::class, 'userinfo']);
     Route::post('/userinfoupdate', [UserController::class, 'userinfoUpdate']);
-
-
-
-    // Route::get('/products/{id}/viewproduct', [ProductController::class, 'eachproduct']);
 });
 
-
-
-// Route::middleware('auth:sanctum')->post('/favourite', [UserController::class, 'addToFavourite']);
-// Route::middleware('auth:sanctum')->post('/signout', [UserController::class, 'signout']);
-// Route::middleware('auth:sanctum')->get('/loggedinuser', [UserController::class, 'loggedinuser']);
-
-
-
-
-
-// Route::post('/product/{id}', [ProductController::class, 'addtocart']);
-// Route::middleware('auth:sanctum')->post('/updatecart', [ProductController::class, 'updateCart']);
-
-// Route::middleware('auth:sanctum')->post('/addproduct', [AdminController::class, 'addproduct']);
-
-
-
-// Route::group(['middleware'=>['auth:sanctum']], function () {
-//     Route::get('/user/{id}', [UserController::class, 'userinfo']);
-
-// });
-// Route::get('/user/{id}', [UserController::class, 'userinfo'])->middleware('auth:sanctum');
-// Route::middleware('auth:sanctum')->get('/user/{id}', [UserController::class, 'userinfo']);
-
-
-
-// Admin Controller

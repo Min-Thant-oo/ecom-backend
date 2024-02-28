@@ -9,21 +9,9 @@ class CategoryController extends Controller
 {
     public function showcategory()
     {
-        $category = Category::all();
+        $category = Category::latest()->get();
         return response()->json(['category' => $category]);
     }
-
-    // public function searchcategory($categorySearchTerm) {
-    //     $category = Category::where('slug', $categorySearchTerm)->first();
-
-    //     if ($category) {
-    //         $products = $category->products()->get();
-
-    //         return response()->json(['products' => $products]);
-    //     } else {
-    //         return response()->json(['message' => 'Category not found'], 404);
-    //     }
-    // }
 
     public function searchcategory($categorySearchTerm)
     {

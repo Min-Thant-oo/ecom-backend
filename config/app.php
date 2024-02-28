@@ -183,6 +183,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        Mailjet\LaravelMailjet\MailjetServiceProvider::class,
+        // Mailjet\LaravelMailjet\MailjetMailServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -212,6 +215,9 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         // 'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
+
+        'Mailjet' => Mailjet\LaravelMailjet\Facades\Mailjet::class,
+
 
     ])->toArray(),
 

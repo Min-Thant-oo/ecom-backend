@@ -14,6 +14,7 @@ return [
     */
 
     'default' => env('MAIL_MAILER', 'smtp'),
+    // 'default' => env('MAIL_MAILER', 'mailjet'),
 
     /*
     |--------------------------------------------------------------------------
@@ -36,9 +37,9 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+            'port' => env('MAIL_PORT', 465),
+            'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
@@ -76,6 +77,31 @@ return [
             'mailers' => [
                 'smtp',
                 'log',
+            ],
+        ],
+
+
+        //         MAILJET_APIKEY=a269be42b78e194342d840c34a64ccd3
+        // MAILJET_APISECRET=a9b8db2a066524d1103a970cd4109a81
+
+        // 'mailjet' => [
+        //     'transport' => 'mailjet',
+        // ],
+
+        'mailjet' => [
+            'key' => env('MAILJET_APIKEY'),
+            'secret' => env('MAILJET_APISECRET'),
+            'transactional' => [
+                'call' => true,
+                'version' => 'v3.1',
+            ],
+            'common' => [
+                'call' => true,
+                'version' => 'v3',
+            ],
+            'premium' => [
+                'call' => true,
+                'version' => 'v3.1',
             ],
         ],
     ],

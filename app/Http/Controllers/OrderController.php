@@ -53,16 +53,7 @@ class OrderController extends Controller
             $order->increment('quantity', $product['quantity']);
         }
 
-        
-
-        // sending email notification with pdf to the user
         SendOrderConfirmationEmail::dispatch($order);
-
-        // Notifying the admin through telegram chatbot
-        // Telegram::sendMessage([
-        //     'chat_id' => env('TELEGRAM_CHAT_ID'),
-        //     'text' => "New purchase made!\n\nOrder Details:\n" . json_encode($order),
-        // ]);
 
         Telegram::sendMessage([
             'chat_id' => env('TELEGRAM_CHAT_ID'),

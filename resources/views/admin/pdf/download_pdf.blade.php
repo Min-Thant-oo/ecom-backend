@@ -13,7 +13,10 @@
         <div style="font-family: Arial, sans-serif; overflow: auto; clear: both;">
             {{-- 1 --}}
             <div style="float: left; width: 100px;">
-            <img src="https://companieslogo.com/img/orig/AMZN-e9f942e4.png?t=1632523695" alt="company-logo" height="100" width="100" />
+            <img 
+                {{-- src="https://companieslogo.com/img/orig/AMZN-e9f942e4.png?t=1632523695"  --}}
+                src="https://solarecombackend.minthantoo.com/storage/profilepictures/eRmwj1PtiZN2HaW6jwQhTQFjwk8hFC6uEvdvdNS0.jpg"
+                alt="company-logo" height="100" width="100" />
             </div>
         
             {{-- 2 --}}
