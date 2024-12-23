@@ -81,7 +81,7 @@
 
         <div>
             {{-- <a href="{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword"}}" style="text-decoration: none;">Reset Password</a> --}}
-            <a href="{{ env('APP_URL') . "/{$user->remember_token}/{$user->email}/resetpassword" }}" style="text-decoration: none;">Reset Password</a>
+            <a href="{{ env('APP_URL') . "/{$user->remember_token}/{$user->email}/resetpassword" }}" style="color: #fff;">Reset Password</a>
         </div>
 
         <p>If you're having trouble clicking the "Reset Password" button, copy and paste the following URL into your web browser:</p>
