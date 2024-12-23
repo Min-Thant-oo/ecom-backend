@@ -71,7 +71,7 @@
 
     <div class="container">
 
-        <h2 style="text-align: center">Forgot Password?</h2>
+        <h2>Forgot Password?</h2>
 
         <p>Hello {{ $user->name }},</p>
 
@@ -79,7 +79,7 @@
 
         <p>To reset your password, click on the following button:</p>
 
-        <div class="button-center">
+        <div>
             {{-- <a href="{{"http://localhost:3000/{$user->remember_token}/{$user->email}/resetpassword"}}" style="text-decoration: none;">Reset Password</a> --}}
             <a href="{{ env('APP_URL') . "/{$user->remember_token}/{$user->email}/resetpassword" }}" style="text-decoration: none;">Reset Password</a>
         </div>
