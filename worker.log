@@ -1,0 +1,4 @@
+  2024-12-23 07:32:53 App\Jobs\SendForgetPasswordEmail ............... RUNNING
+  2024-12-23 07:32:53 App\Jobs\SendForgetPasswordEmail .......... 34.32ms DONE
+  2024-12-23 07:32:53 App\Mail\ForgetPasswordEmail ................... RUNNING
+  2024-12-23 07:32:54 App\Mail\ForgetPasswordEmail ........... 1,714.13ms DONE
